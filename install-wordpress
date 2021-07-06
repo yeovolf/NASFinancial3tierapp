@@ -1,0 +1,32 @@
+At this point if you copy and paste the public IP of your instance that you created above, it will display Wordpress page.
+On that Wordpress page, there are few other steps that need to be completed. Follow those steps, it should display a 
+file name and a text that needs to be added in that file. So you need to go back to your instance connect and create 
+that file and add the text given to you. You can either vi (the file name) and insert that message or you touch (file name) and
+add the message by echoing the message (do not forget to append to avoid overwritting). Steps for vi are as follow
+
+
+
+vi (file name), i (to insert the text) (copy the text from Wordpress and paste it) then Esc:wq! (to save and exit).
+
+Then go back to continue the installation of Wordpress on the public IP of the instance, by adding the database name
+which is different than the database identifier, the user name, password and the endpoint of the database that you
+created in the private subnet. These last steps will now prompt you to create an username and password for your 
+Wordpress. You can now login Wordpress and it will display Welcome to Wordpress message, you may customize as you wish.
+Now you need to install mysql in order to view the different tables already in and or add more tables to the database you  
+just connected to. Follow the steps below:
+
+
+yum install mysql -y
+mysql -h(RDS Endpoint) -u(RDS Username) -p(RDS password if you do not want people to see the password, click Enter
+this will take you to the next line to enter the secret password)      (it should now display Welcome to DB Monitor)
+show databases;                                                        (this will show all the databases you have there)
+use (whatever database you want)
+show tables;                                                           (this will show all the tables in chosen database)
+select * from (whichever table you want)                               (this will select the table you want)
+select * from (whichever table = sthg)                                 (this will return to you the table = whatever you want)
+And so on....
+
+
+
+
+:

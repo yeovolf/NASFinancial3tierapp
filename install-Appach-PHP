@@ -1,0 +1,14 @@
+sudo su                                                        (to have root properties)
+yum install httpd php php-mysql -y                             (you can install each separately also if you prefer)
+amazon-linux-extras install php7.4 -y                          (php7.4 is the latest version as of now)
+cd /var/www/html                               
+wget https://wordpress.org/latest.tar.gz                       (this will download and install wordpress)
+ls                    not required just for verification       (this will show you the latest.tar.gz installed)
+tar xzf latest.tar.gz                                          (this is to unzip the downloaded zip file)
+ls                    not required just for verification       (this will show you latest.tar.gz and wordpress installed)
+cp -r wordpress/* /var/www/html/
+ls                    not required just for verification       (this will show you a bunch of files installed)
+rm -rf wordpress latest.tar.gz                                 (this will delete the zip file)
+systemctl start httpd                                          (this is to start the Apache that was installed in line 1)
+systemctl status httpd                                         (this should show active)
+cd /var/www/html 

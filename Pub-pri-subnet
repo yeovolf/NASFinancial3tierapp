@@ -1,0 +1,7 @@
+Create an instance in a Public subnet and a database in a Private subnet.
+Remember to have a security group that allows the following ports HTTP (80), HTTPS (443), SSH {(22) & your IP only} 
+and Aurora SQL (3306) attached to your instance and a security group that allows SSH {(22) & your IP address only} 
+and Aurora SQL {(3306) & your CIDR block address} attached to your database.
+After making sure both are running, now you need to SSH or direct connect to your database from your instance.
+For example you can SSH using Putty or Mobaxterm, follow the prompts and once you it displays your welcome message
+the following steps should be used:
